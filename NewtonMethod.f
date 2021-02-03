@@ -1,8 +1,10 @@
-	PROGRAM newtonMethod
+! This is a fortran program for Newton Method
+		PROGRAM newtonMethod
 		implicit none 
 		real,parameter :: e=1e-4
 		integer :: i=1
 		real :: xn,xnp1,f,fd,root,realE
+		! Require input from user
 		write(*,*)"Input the initiate x:"
 		read(*,*)xn
 		if (f(xn)==0) then
@@ -20,11 +22,14 @@
 		end if
 	END PROGRAM newtonMethod
 
+! functions below should be modified for various expressions
+	! initial function
 	real function f(x)
 	real :: x
 	f=x**3-x+1
 	end
 
+	! function's derivative
 	real function fd(x)
 	real :: x
 	fd=3*x**2-1
